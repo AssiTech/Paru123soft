@@ -1,0 +1,282 @@
+ <mat-horizontal-stepper >
+    <mat-step>
+      <mat-accordion>
+  <!-- Personal details -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title >
+        <label style="text-align: center">Personal Details</label>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field style="padding-left:40px;width: 400px;">
+      <input matInput placeholder="Enter your first name *">
+    </mat-form-field>
+    <mat-form-field style="padding:40px; width: 400px;">
+      <input matInput placeholder="Enter your last name *">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
+    <mat-form-field style="padding-left:40px;width: 400px;">
+      <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-radio-group style="padding:20px;width: 400px;" class="example-radio-group" [(ngModel)]="favoriteSeason">
+      Gender
+      <mat-radio-button style="padding:10px;" class="example-radio-button" *ngFor="let gen of gender" [value]="gen">
+        {{gen}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-divider></mat-divider>
+
+    <mat-form-field style="padding-left:40px;width: 400px;">
+      <span matPrefix>+91 &nbsp;</span>
+      <input type="tel" matInput placeholder="Telephone">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
+    <div>
+      <i style="padding-left:40px;">Alternative Contact</i>
+      <div style="padding-left:60px;">1.
+        <mat-form-field style="padding:30px;">
+          <input matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field style="padding:40px;">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="Email">
+        </mat-form-field>
+      </div>
+
+      <div style="padding-left:60px;">2.
+        <mat-form-field style="padding:30px;">
+          <input matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field style="padding:40px;">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="Email">
+        </mat-form-field>
+      </div>
+      <div style="padding-left:60px;">3.
+        <mat-form-field style="padding:30px;">
+          <input matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field style="padding:40px;">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="Email">
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+   
+          <div style="padding-left:900px;">
+            <!-- <button mat-button matStepperPrevious>Back</button> -->
+            <button mat-button matStepperNext>Next</button>
+          </div>
+          </mat-expansion-panel>
+
+  <!-- Address Details -->
+
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <label>Address Details</label>
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field style="padding:40px;width: 400px;">
+      <input matInput placeholder=" Location *">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field style="padding-left:40px;width: 400px;">
+      <input matInput placeholder="Flat No.">
+    </mat-form-field>
+    <mat-form-field style="padding:40px;width: 400px;">
+      <input matInput placeholder=" Wing Name">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field style="padding:40px;width: 400px;">
+      <input matInput placeholder=" Society Name">
+    </mat-form-field>
+    <mat-form-field style="width: 400px;" >
+      <mat-select placeholder="State">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field style="padding-left:40px;width: 400px;">
+      <mat-select placeholder="District">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field style="padding:40px;width: 400px;">
+      <mat-select placeholder="Tehsil">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <div style="padding-left:40px;">
+      LandMark
+      <div>1.
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="">
+        </mat-form-field>2.
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="">
+        </mat-form-field>3.
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+    <div style="padding-left:40px;">
+      Area
+      <div>1.
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="">
+        </mat-form-field>2.
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="">
+        </mat-form-field>3.
+        <mat-form-field style="padding:40px;">
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+    <div >
+        <button style="padding-left:30px;" mat-button matStepperPrevious>Back</button>
+        <button style="padding-left:700px;" mat-button matStepperNext>Save And Continue</button>
+       </div>
+  </mat-expansion-panel>
+  <!-- Office Details -->
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <label>Office Details</label>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field style="padding-left:40px; width: 400px;">
+      <input matInput placeholder="Organization Name *">
+    </mat-form-field>
+    <mat-form-field style="padding:40px; width: 400px;">
+      <input matInput placeholder="GST No.*">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <div style="padding-left:40px;">
+      Same As Above Address*
+      <mat-radio-group style="padding:50px;" class="example-radio-group" [(ngModel)]="favoriteSeason">
+        <mat-radio-button style="padding:10px;" class="example-radio-button" *ngFor="let addr of address" [value]="addr">
+          {{addr}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <mat-divider></mat-divider>
+    <i style="padding-left:40px;">Role</i>
+    <div style="padding-left:40px;">1.Contact/Admin
+      <mat-form-field style="padding:30px;">
+        <input matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+    </div>
+    <div style="padding-left:40px;">2.Contact/Accountant
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+    </div>
+    <div style="padding-left:40px;">3.Contact/DeliveryBoy1
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+    </div>
+    <div style="padding-left:40px;">4.Contact/DeliveryBoy2
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field style="padding:10px;">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+    </div>    
+    <mat-divider></mat-divider>
+    <div >
+        <button style="padding-left:30px;" mat-button matStepperPrevious>Back</button>
+        <button style="padding-left:700px;" mat-button matStepperNext>Save And Continue</button>
+      </div>
+  </mat-expansion-panel>
+  <!-- GoDown Details -->
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <label>Godown details</label>
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div style="padding-left:40px;">
+        Same As Office Address*
+        <mat-radio-group style="padding:50px;" class="example-radio-group" [(ngModel)]="favoriteSeason">
+          <mat-radio-button style="padding:10px;" class="example-radio-button" *ngFor="let addr of address" [value]="addr">
+            {{addr}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div >
+        <button style="padding-left:30px;" mat-button matStepperPrevious>Back</button> 
+          <button style="padding-left:900px;" mat-button matStepperNext>Submit</button>
+        </div>
+  </mat-expansion-panel>
+</mat-accordion>
+</mat-step>
+</mat-horizontal-stepper>
+    
